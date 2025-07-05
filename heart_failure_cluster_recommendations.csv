@@ -1,0 +1,12 @@
+Cluster,Recommendation
+0,MEDIUM RISK - Regular follow-up needed
+0,Outpatient management with close monitoring
+1,HIGH RISK - Intensive monitoring required
+1,Consider hospitalization for unstable patients
+1,Optimize heart failure medications
+1,"Reduced EF - ACE inhibitors/ARBs, beta-blockers"
+1,Elevated creatinine - Monitor kidney function
+1,Consider diuretic adjustment
+2,MEDIUM RISK - Regular follow-up needed
+2,Outpatient management with close monitoring
+2,"Reduced EF - ACE inhibitors/ARBs, beta-blockers"

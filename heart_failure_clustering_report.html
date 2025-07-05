@@ -1,0 +1,315 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart Failure Clustering Analysis Report</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+                line-height: 1.6;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            .header {
+                text-align: center;
+                color: #2c3e50;
+                border-bottom: 3px solid #3498db;
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+            }
+            .section {
+                margin: 30px 0;
+                padding: 20px;
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                border-left: 4px solid #3498db;
+            }
+            .metric {
+                display: inline-block;
+                background-color: #e3f2fd;
+                padding: 15px;
+                margin: 10px;
+                border-radius: 8px;
+                border: 1px solid #bbdefb;
+                min-width: 200px;
+                text-align: center;
+            }
+            .metric-value {
+                font-size: 24px;
+                font-weight: bold;
+                color: #1976d2;
+            }
+            .metric-label {
+                font-size: 14px;
+                color: #666;
+                margin-top: 5px;
+            }
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .table th, .table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            .table th {
+                background-color: #3498db;
+                color: white;
+                font-weight: bold;
+            }
+            .table tr:hover {
+                background-color: #f5f5f5;
+            }
+            .risk-high { color: #e74c3c; font-weight: bold; }
+            .risk-medium { color: #f39c12; font-weight: bold; }
+            .risk-low { color: #27ae60; font-weight: bold; }
+            .recommendations {
+                background-color: #fff3cd;
+                border: 1px solid #ffeaa7;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px 0;
+            }
+            .cluster-section {
+                background-color: #ffffff;
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 15px 0;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #ddd;
+                color: #666;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Heart Failure Clustering Analysis Report</h1>
+                <p>Comprehensive Clinical Data Analysis and Risk Stratification</p>
+                <p><em>Generated on: 2025-07-05 02:49:09</em></p>
+            </div>
+    
+            <div class="section">
+                <h2>Executive Summary</h2>
+                <div class="metric">
+                    <div class="metric-value">299</div>
+                    <div class="metric-label">Total Patients</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Identified Clusters</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">0.168</div>
+                    <div class="metric-label">Silhouette Score</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">32.1%</div>
+                    <div class="metric-label">Overall Death Rate</div>
+                </div>
+            </div>
+    
+            <div class="section">
+                <h2>Cluster Profiles and Risk Stratification</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Cluster</th>
+                            <th>Patients</th>
+                            <th>Death Rate</th>
+                            <th>Risk Level</th>
+                            <th>Avg Age</th>
+                            <th>Avg EF (%)</th>
+                            <th>Avg Creatinine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <td><strong>Cluster 0</strong></td>
+                            <td>74</td>
+                            <td>23.0%</td>
+                            <td class="risk-medium">MEDIUM</td>
+                            <td>63.5</td>
+                            <td>52.3</td>
+                            <td>1.22</td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Cluster 1</strong></td>
+                            <td>69</td>
+                            <td>60.9%</td>
+                            <td class="risk-high">HIGH</td>
+                            <td>69.6</td>
+                            <td>34.0</td>
+                            <td>2.26</td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Cluster 2</strong></td>
+                            <td>156</td>
+                            <td>23.7%</td>
+                            <td class="risk-medium">MEDIUM</td>
+                            <td>55.7</td>
+                            <td>33.2</td>
+                            <td>1.09</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="section">
+                <h2>Clinical Recommendations by Cluster</h2>
+    
+                <div class="cluster-section">
+                    <h3 class="risk-medium">Cluster 0 - Clinical Recommendations</h3>
+                    <p><strong>Patient Count:</strong> 74</p>
+                    <p><strong>Death Rate:</strong> 23.0%</p>
+                    <div class="recommendations">
+                        <ul>
+        <li>MEDIUM RISK - Regular follow-up needed</li><li>Outpatient management with close monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="cluster-section">
+                    <h3 class="risk-high">Cluster 1 - Clinical Recommendations</h3>
+                    <p><strong>Patient Count:</strong> 69</p>
+                    <p><strong>Death Rate:</strong> 60.9%</p>
+                    <div class="recommendations">
+                        <ul>
+        <li>HIGH RISK - Intensive monitoring required</li><li>Consider hospitalization for unstable patients</li><li>Optimize heart failure medications</li><li>Reduced EF - ACE inhibitors/ARBs, beta-blockers</li><li>Elevated creatinine - Monitor kidney function</li><li>Consider diuretic adjustment</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="cluster-section">
+                    <h3 class="risk-medium">Cluster 2 - Clinical Recommendations</h3>
+                    <p><strong>Patient Count:</strong> 156</p>
+                    <p><strong>Death Rate:</strong> 23.7%</p>
+                    <div class="recommendations">
+                        <ul>
+        <li>MEDIUM RISK - Regular follow-up needed</li><li>Outpatient management with close monitoring</li><li>Reduced EF - ACE inhibitors/ARBs, beta-blockers</li>
+                        </ul>
+                    </div>
+                </div>
+        
+            <div class="section">
+                <h2>🔍 Feature Importance Analysis</h2>
+                <p>Features ranked by their ability to discriminate between clusters (Coefficient of Variation):</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Feature</th>
+                            <th>Coefficient of Variation</th>
+                            <th>Importance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <td>1</td>
+                            <td>Creatinine Phosphokinase</td>
+                            <td>0.479</td>
+                            <td>High</td>
+                        </tr>
+        
+                        <tr>
+                            <td>2</td>
+                            <td>Serum Creatinine</td>
+                            <td>0.421</td>
+                            <td>High</td>
+                        </tr>
+        
+                        <tr>
+                            <td>3</td>
+                            <td>Ejection Fraction</td>
+                            <td>0.271</td>
+                            <td>Medium</td>
+                        </tr>
+        
+                        <tr>
+                            <td>4</td>
+                            <td>Platelets</td>
+                            <td>0.159</td>
+                            <td>Medium</td>
+                        </tr>
+        
+                        <tr>
+                            <td>5</td>
+                            <td>Age</td>
+                            <td>0.111</td>
+                            <td>Low</td>
+                        </tr>
+        
+                        <tr>
+                            <td>6</td>
+                            <td>Serum Sodium</td>
+                            <td>0.026</td>
+                            <td>Low</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="section">
+                <h2>Model Performance Metrics</h2>
+                <div class="metric">
+                    <div class="metric-value">0.168</div>
+                    <div class="metric-label">Silhouette Score</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">43.5</div>
+                    <div class="metric-label">Calinski-Harabasz Score</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">1.491</div>
+                    <div class="metric-label">Davies-Bouldin Score</div>
+                </div>
+            </div>
+    
+            <div class="section">
+                <h2>Key Clinical Insights</h2>
+                <ul>
+                    <li><strong>Risk Stratification:</strong> Successfully identified distinct patient phenotypes with varying mortality risks</li>
+                    <li><strong>High-Risk Group:</strong> Characterized by lower ejection fraction and higher serum creatinine levels</li>
+                    <li><strong>Treatment Targeting:</strong> Each cluster requires tailored monitoring frequency and intervention intensity</li>
+                    <li><strong>Resource Allocation:</strong> High-risk clusters should receive priority for intensive care resources</li>
+                    <li><strong>Predictive Value:</strong> Cluster assignment can guide prognosis and treatment planning</li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <p>Heart Failure Clustering Analysis Report | Generated using K-Means Clustering | 2025-07-05 02:49:09</p>
+                <p>This analysis is for research and clinical decision support purposes</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,2 @@
+Total_Patients,Number_of_Clusters,Overall_Death_Rate,Silhouette_Score,Calinski_Harabasz_Score,Davies_Bouldin_Score
+299,3,0.3210702341137124,0.16822238969636766,43.515887368370116,1.4911094891167085
